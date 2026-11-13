@@ -1,0 +1,26 @@
+import logging
+import random
+
+logging.basicConfig(level=logging.DEBUG,
+                    filename='calc-logs.log',
+                    filemode='a',
+                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+logging.info("Calc has started...")
+
+guess = random.randint(1, 100)
+
+while True:
+    n = int(input("Guess a number: "))
+    if n == guess:
+        logging.info("You guessed the number")
+        break
+    elif n > guess:
+        logging.info("Too high")
+        print("Too high")
+    elif n < guess:
+        logging.info ("Too low")
+        print("Too low")
+
+
+    
